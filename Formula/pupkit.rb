@@ -1,20 +1,20 @@
 class Pupkit < Formula
   desc "A welcome-first CLI for surfacing local environment info and AI usage at a glance."
   homepage "https://github.com/pupkit-labs/pupkit-cli"
-  version "0.0.3"
+  version "0.0.4"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/pupkit-labs/pupkit-cli/releases/download/v0.0.3/pupkit-aarch64-apple-darwin.tar.xz"
-      sha256 "4c2c46293661dbdb40e1e8410d2b6f07559780b54a00e5a3972fd4369226e62e"
+      url "https://github.com/pupkit-labs/pupkit-cli/releases/download/v0.0.4/pupkit-aarch64-apple-darwin.tar.xz"
+      sha256 "eab80530534d227f752fb3dbc1f152282fe54bd0ecb0f7a9f1170bf66ddd5f50"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pupkit-labs/pupkit-cli/releases/download/v0.0.3/pupkit-x86_64-apple-darwin.tar.xz"
-      sha256 "4f763d692ff662529418a73cdf18858adcc719e4418362121da15331102254ba"
+      url "https://github.com/pupkit-labs/pupkit-cli/releases/download/v0.0.4/pupkit-x86_64-apple-darwin.tar.xz"
+      sha256 "4724889a6b87f1dd8f01e2511d352c590a6a4a17a3f1d9ad7d3ff0b9d2525062"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/pupkit-labs/pupkit-cli/releases/download/v0.0.3/pupkit-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "21704c0f2e07e42fcdda457fa4dda8c69ec8bfffe8a737650f78b0e2f31b67dc"
+    url "https://github.com/pupkit-labs/pupkit-cli/releases/download/v0.0.4/pupkit-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "b40b4f862c1937c371a28d1826d57e3fdc2c1a75e887db9a0e5f5c89cb0a2fad"
   end
   license "MIT"
 
