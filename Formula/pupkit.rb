@@ -1,20 +1,20 @@
 class Pupkit < Formula
   desc "A welcome-first CLI for surfacing local environment info and AI usage at a glance."
   homepage "https://github.com/pupkit-labs/pupkit-cli"
-  version "0.0.6"
+  version "1.0.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/pupkit-labs/pupkit-cli/releases/download/v0.0.6/pupkit-aarch64-apple-darwin.tar.xz"
-      sha256 "42904a62653f4d9d7f90a48e5c869db5de4edfa6ea9b5c8d322ad5fe4cb3d498"
+      url "https://github.com/pupkit-labs/pupkit-cli/releases/download/v1.0.0/pupkit-aarch64-apple-darwin.tar.xz"
+      sha256 "5d7b5fa7b62f35a2cbde9fd47b72e876b66b86299a1a142fff4c9416b1b52cfe"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pupkit-labs/pupkit-cli/releases/download/v0.0.6/pupkit-x86_64-apple-darwin.tar.xz"
-      sha256 "47bab8cf2f7caf3559d4b70bd445ad799f6f58eef3de8bf63986b31fa16937cd"
+      url "https://github.com/pupkit-labs/pupkit-cli/releases/download/v1.0.0/pupkit-x86_64-apple-darwin.tar.xz"
+      sha256 "bf8958d5d37e75b7b4de43e732dbde136285e23741a381aceb67c03c41362d68"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/pupkit-labs/pupkit-cli/releases/download/v0.0.6/pupkit-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "6cae0d32dcd96ab3450c58c1c9820ae5f10ec4336d28095f8ed211086b02b30d"
+    url "https://github.com/pupkit-labs/pupkit-cli/releases/download/v1.0.0/pupkit-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "795fc4418270c2009e49ee0cd687983d9366f1593d5be8a5b0d406ed8a361344"
   end
   license "MIT"
 
@@ -40,9 +40,27 @@ class Pupkit < Formula
   end
 
   def install
-    bin.install "pupkit" if OS.mac? && Hardware::CPU.arm?
-    bin.install "pupkit" if OS.mac? && Hardware::CPU.intel?
-    bin.install "pupkit" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "pupkit"
+      bin.install "PupkitShell" if File.exist?("PupkitShell")
+      if File.directory?("PupkitShell_PupkitShell.bundle")
+        (prefix/"bin"/"PupkitShell_PupkitShell.bundle").install Dir["PupkitShell_PupkitShell.bundle/**/*"]
+      end
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "pupkit"
+      bin.install "PupkitShell" if File.exist?("PupkitShell")
+      if File.directory?("PupkitShell_PupkitShell.bundle")
+        (prefix/"bin"/"PupkitShell_PupkitShell.bundle").install Dir["PupkitShell_PupkitShell.bundle/**/*"]
+      end
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "pupkit"
+      bin.install "PupkitShell" if File.exist?("PupkitShell")
+      if File.directory?("PupkitShell_PupkitShell.bundle")
+        (prefix/"bin"/"PupkitShell_PupkitShell.bundle").install Dir["PupkitShell_PupkitShell.bundle/**/*"]
+      end
+    end
 
     install_binary_aliases!
 
