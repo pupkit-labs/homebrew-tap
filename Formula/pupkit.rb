@@ -5,16 +5,16 @@ class Pupkit < Formula
   if OS.mac?
     if Hardware::CPU.arm?
       url "https://github.com/pupkit-labs/pupkit-cli/releases/download/v1.0.0/pupkit-aarch64-apple-darwin.tar.xz"
-      sha256 "dce7a44cd2d8644e21dfa5a24098294f6aac949981eae6739525aa5173021603"
+      sha256 "55488bde8f2f9be5904afe7118b1796371700152a864bc034cd2c55d2989fb2e"
     end
     if Hardware::CPU.intel?
       url "https://github.com/pupkit-labs/pupkit-cli/releases/download/v1.0.0/pupkit-x86_64-apple-darwin.tar.xz"
-      sha256 "dddad550d54d62f71589c8cdec20383d51d1efe79c21479deccf96e3afbe85a5"
+      sha256 "f94d9394f1e7ee2dc095fea12709b6a65e0ee2815519a3e58a49a9522f252839"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
     url "https://github.com/pupkit-labs/pupkit-cli/releases/download/v1.0.0/pupkit-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "f42a5e7e304972be6122e341a1d6782873c7739065ea696f2b9b004479f28a6a"
+    sha256 "e76fc4300b4832ec9890493b0cb2f78e3355477ec6de8abc6a111324e24e68c3"
   end
   license "MIT"
 
