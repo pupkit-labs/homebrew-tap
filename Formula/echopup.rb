@@ -7,16 +7,16 @@ class Echopup < Formula
   if OS.mac?
     if Hardware::CPU.arm?
       url "https://github.com/pupkit-labs/echo-pup-rust/releases/download/v0.0.1/echopup-aarch64-apple-darwin.tar.xz"
-      sha256 "49655de18dafe6fd480375e16dc147496b296b146570c84ad531f5def9c562ca"
+      sha256 "6fc63b08a5a6909e11af938864104f18faeadb4ea884b0a6616a2df72b7692c1"
     end
     if Hardware::CPU.intel?
       url "https://github.com/pupkit-labs/echo-pup-rust/releases/download/v0.0.1/echopup-x86_64-apple-darwin.tar.xz"
-      sha256 "a9720b456e4ebe86d0524555f7790693c6ab924773cd6fa58f26e9cfeff14d8d"
+      sha256 "984aaf208ea53fe530f1572e1978b902e777a5014171a02b9b7f6d291bd456cb"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
     url "https://github.com/pupkit-labs/echo-pup-rust/releases/download/v0.0.1/echopup-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "1e3e2b465b1e116dd77be777544d48811485a0640d3f7ec8e3b5d53e56c9cbcf"
+    sha256 "d9727755784cb287d51559d11b97778d73731a84dd2bda3ba8c80f80b8028595"
   end
 
   def install
